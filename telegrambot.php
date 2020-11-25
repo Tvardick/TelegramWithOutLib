@@ -18,9 +18,12 @@ $text = $arr['message']['text'];
 $coord1 = $arr['message']['location']['latitude'];
 $coord2 = $arr['message']['location']['longitude'];
 
-$ardata = array('file_id' => $arr['message']['photo'][0]['file_id']);
-$zz = $tg->getPhoto($ardata);
-$filename = "/myimages/tg".strtotime(date("y-m-d H:i:s")).".jpg"; //Путь и название картинки, которую вы сохраняете
-$tg->savePhoto($zz["result"]["file_path"],$filename);
 
 $tg->send($chat_id, "Нас не догонят!", "DEL");
+
+
+$arInfo["inline_keyboard"][0][0]["callback_data"] = 1;
+$arInfo["inline_keyboard"][0][0]["text"] = "Кнопка 1";
+$arInfo["inline_keyboard"][1][0]["callback_data"] = 2;
+$arInfo["inline_keyboard"][1][0]["text"] = "Кнопка 2";
+$tg->send($chat_id, "Примеры кнопок",$arInfo);
