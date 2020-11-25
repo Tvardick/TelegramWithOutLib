@@ -18,4 +18,9 @@ $text = $arr['message']['text'];
 $coord1 = $arr['message']['location']['latitude'];
 $coord2 = $arr['message']['location']['longitude'];
 
+$ardata = array('file_id' => $arr['message']['photo'][0]['file_id']);
+$zz = $tg->getPhoto($ardata);
+$filename = "/myimages/tg".strtotime(date("y-m-d H:i:s")).".jpg"; //Путь и название картинки, которую вы сохраняете
+$tg->savePhoto($zz["result"]["file_path"],$filename);
+
 $tg->send($chat_id, "Нас не догонят!", "DEL");
