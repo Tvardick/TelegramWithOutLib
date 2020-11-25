@@ -3,7 +3,7 @@
 
 class TG {
 
-    public $token = '';
+    public $token = '1374822182:AAEyF-wQYLN6Q61U2DSMT1LaiiRSNijeoPc';
 
     public function __construct($token) {
         $this->token = $token;

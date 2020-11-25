@@ -3,10 +3,14 @@
 
 $body = file_get_contents('php://input'); 
 $arr = json_decode($body, true); 
+
+$fp = fopen("test.txt", "w+");
+
+fwrite($fp, $body);
  
 include_once ('telegramgclass.php');   
 
-$tg = new tg('токен который вы получили');
+$tg = new tg('1374822182:AAEyF-wQYLN6Q61U2DSMT1LaiiRSNijeoPc');
 
 $chat_id = $arr['message']['chat']['id'];
 $userTgId = $arr['message']['from']['id'];
