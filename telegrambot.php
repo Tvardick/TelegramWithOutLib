@@ -18,4 +18,4 @@ $text = $arr['message']['text'];
 $coord1 = $arr['message']['location']['latitude'];
 $coord2 = $arr['message']['location']['longitude'];
 
-$tg->send($chat_id, "Нас не догонят!");
+$tg->send($chat_id, "Нас не догонят!", "DEL");
