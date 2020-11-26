@@ -22,12 +22,15 @@ $coord2 = $arr['message']['location']['longitude'];
 $tg->send($chat_id, "Нас не догонят!", "DEL");
 
 
+if ($text === "YO") {
+
 $arInfo["inline_keyboard"][0][0]["callback_data"] = 1;
 $arInfo["inline_keyboard"][0][0]["text"] = "Кнопка 1";
 $arInfo["inline_keyboard"][1][0]["callback_data"] = 2;
 $arInfo["inline_keyboard"][1][0]["text"] = "Кнопка 2";
 $tg->send($chat_id, "Примеры кнопок",$arInfo);
-
+} elseif ($text === "Кнопка 2") {
 
 $arInfo["keyboard"][0][0]["text"] = "Кнопка";
 $tg->send($chat_id, "Посмотрите у вас должна появиться клавиатура!",$arInfo);
+};
